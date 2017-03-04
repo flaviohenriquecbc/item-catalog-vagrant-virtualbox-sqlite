@@ -1,0 +1,54 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner list">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>{{ category.name }}
+			<figure class="creator">
+				<img src="{{ user.picture}}">
+				<figcaption>{{ user.name }}</figcaption>
+			</figure>
+			</h1>
+
+		</div>
+	</div>
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			
+		</div>
+		<div class="col-md-7"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							 <li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+	{% if items !=[] %}	
+		<div class="row">
+			<div>
+				<h2>Items</h2>
+					{% for i in items %}
+						<div class="list-item">
+							<a href="{{url_for('showListItem', category_id = category.id, list_id=i.id )}}">
+								<h3>{{i.title}}</h3>
+							</a>
+							<p>{{i.description}}</p>
+						</div>
+					{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

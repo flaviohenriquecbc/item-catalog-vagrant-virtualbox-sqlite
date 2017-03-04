@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner list">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>List Item</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+                    <h2>{{item.title}}</h2></br>
+                    <span>Description: {{item.description}}</span></br></br>
+					{% if user_loggedin %}
+                    <a href='{{url_for('editListItem', category_id = category_id, list_id=item.id ) }}'>Edit</a> | 
+                    <a href='{{url_for('deleteListItem', category_id = category_id, list_id=item.id ) }}'>Delete</a>
+                    {% endif %}
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
