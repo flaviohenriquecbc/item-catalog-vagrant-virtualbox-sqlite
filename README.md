@@ -16,9 +16,9 @@ Item catalog project for Udacity Full Stack Nanodegree
 From a GitHub shell:
 
 ```
-cd fullstack/vagrant
-vagrant up (you can turn off the VM with 'vagrant halt')
-vagrant ssh (from here you can type 'exit' to log out)
+$ cd fullstack/vagrant
+$ vagrant up (you can turn off the VM with 'vagrant halt')
+$ vagrant ssh (from here you can type 'exit' to log out)
 ```
 
 ### Running the project
