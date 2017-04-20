@@ -35,3 +35,4 @@ $ vagrant ssh (from here you can type 'exit' to log out)
 ```
 
 Tadaa! You have the item catalog working
+
